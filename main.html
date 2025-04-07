@@ -1,38 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clock Timer & Color Remover</title>
-    <script>document.getElementById("removeButton").addEventListener("click", () => {
-        const colorSelect = document.getElementById("colorSelect");
-        if (colorSelect.selectedIndex !== -1) {
-            colorSelect.remove(colorSelect.selectedIndex);
-        }
-    });
-});
-</script>
-    <style>
-        #timer {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-        }
-    </style>
+  <title>Remove Color</title>
 </head>
 <body>
-    <p id="timer"></p>
 
-    <h3>Select a color to remove:</h3>
-    <select id="colorSelect">
-        <option>Red</option>
-        <option>Green</option>
-        <option>White</option>
-        <option>Black</option>
-    </select>
-    <input type="button" id="removeButton" value="Select and Remove">
+  <select id="colorSelect">
+    <option>Red</option>
+    <option>Green</option>
+    <option>White</option>
+    <option>Black</option>
+  </select>
+
+  <input type="button" value="Select and Remove" onclick="removeColor()" />
+
+  <script>
+    function removeColor() {
+      const select = document.getElementById("colorSelect");
+      const selectedIndex = select.selectedIndex;
+
+      if (selectedIndex !== -1) {
+        select.remove(selectedIndex);
+      }
+    }
+  </script>
+
 </body>
 </html>
